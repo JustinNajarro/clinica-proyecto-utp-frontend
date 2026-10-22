@@ -8,6 +8,8 @@ import Comprobante from './views/Comprobante.jsx';
 import MisCitas from './views/MisCitas.jsx';
 import Perfil from './views/Perfil.jsx';
 import PanelAdmin from './views/PanelAdmin.jsx';
+import AdminEspecialidades from './views/AdminEspecialidades.jsx';
+import AdminMedicos from './views/AdminMedicos.jsx';
 import { obtenerSesion } from './sesion.js';
 
 const MENU_PACIENTE = [
@@ -19,6 +21,8 @@ const MENU_PACIENTE = [
 
 const MENU_ADMIN = [
   { to: '/admin', texto: 'Agenda de citas', icono: 'agenda' },
+  { to: '/admin/especialidades', texto: 'Especialidades', icono: 'estetoscopio' },
+  { to: '/admin/medicos', texto: 'Médicos', icono: 'medicos' },
 ];
 
 function Protegida({ tipo, children }) {
@@ -50,6 +54,8 @@ export default function App() {
 
       <Route element={<Protegida tipo="admin"><Layout menu={MENU_ADMIN} /></Protegida>}>
         <Route path="/admin" element={<PanelAdmin />} />
+        <Route path="/admin/especialidades" element={<AdminEspecialidades />} />
+        <Route path="/admin/medicos" element={<AdminMedicos />} />
       </Route>
 
       <Route path="*" element={<Redireccion />} />

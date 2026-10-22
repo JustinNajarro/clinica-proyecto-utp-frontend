@@ -28,7 +28,7 @@ export default function Layout({ menu }) {
 
         <nav className="sidebar-nav">
           {menu.map((item) => (
-            <NavLink key={item.to} to={item.to}>
+            <NavLink key={item.to} to={item.to} end>
               <Icono nombre={item.icono} />
               <span>{item.texto}</span>
             </NavLink>
